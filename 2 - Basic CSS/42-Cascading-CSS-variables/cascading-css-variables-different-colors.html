@@ -7,12 +7,28 @@
     You are free to use this code as you like. Please just give me credit.
 -->
 
-<!-- Apply the penguin-skin variable to the background property of the penguin-top,
-penguin-bottom, right-hand and left-hand classes. -->
+<!-- Define a variable named penguin-belly in the :root selector and give it the value of pink.
+You can then see how the value will cascade down to change the value to pink, anywhere that variable is
+used. -->
 
 <style>
+  :root {
+
+    /* add code below */
+    --penguin-belly: pink;
+    /* --penguin-belly: black; */
+    /* add code above */
+  }
+
+  body {
+    /* background: var(--penguin-belly, #c6faf1); */
+    /* --penguin-belly: green; */
+    background: var(--penguin-belly, #c6faf1);
+  }
+
   .penguin {
     --penguin-skin: gray;
+    --penguin-beak: orange;
     position: relative;
     margin: auto;
     display: block;
@@ -21,15 +37,38 @@ penguin-bottom, right-hand and left-hand classes. -->
     height: 300px;
   }
 
+  .right-cheek {
+    top: 15%;
+    left: 35%;
+    /* --penguin-belly: blue; */
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .left-cheek {
+    top: 15%;
+    left: 5%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .belly {
+    top: 60%;
+    left: 2.5%;
+    background: var(--penguin-belly, white);
+    width: 95%;
+    height: 100%;
+    border-radius: 120% 120% 100% 100%;
+  }
+
   .penguin-top {
     top: 10%;
     left: 25%;
-
-    /* change code below */
-    /* background: black; */
-    background: var(--penguin-skin);
-    /* change code above */
-
+    background: var(--penguin-skin, gray);
     width: 50%;
     height: 45%;
     border-radius: 70% 70% 60% 60%;
@@ -38,12 +77,7 @@ penguin-bottom, right-hand and left-hand classes. -->
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
-
-    /* change code below */
-    /* background: black; */
-    background: var(--penguin-skin);;
-    /* change code above */
-
+    background: var(--penguin-skin, gray);
     width: 53%;
     height: 45%;
     border-radius: 70% 70% 100% 100%;
@@ -52,12 +86,7 @@ penguin-bottom, right-hand and left-hand classes. -->
   .right-hand {
     top: 0%;
     left: -5%;
-
-    /* change code below */
-    /* background: black; */
-    background: var(--penguin-skin);
-    /* change code above */
-
+    background: var(--penguin-skin, gray);
     width: 30%;
     height: 60%;
     border-radius: 30% 30% 120% 30%;
@@ -68,12 +97,7 @@ penguin-bottom, right-hand and left-hand classes. -->
   .left-hand {
     top: 0%;
     left: 75%;
-
-    /* change code below */
-    /* background: black; */
-    background: var(--penguin-skin);
-    /* change code above */
-
+    background: var(--penguin-skin, gray);
     width: 30%;
     height: 60%;
     border-radius: 30% 30% 30% 120%;
@@ -81,37 +105,10 @@ penguin-bottom, right-hand and left-hand classes. -->
     z-index: -1;
   }
 
-  .right-cheek {
-    top: 15%;
-    left: 35%;
-    background: white;
-    width: 60%;
-    height: 70%;
-    border-radius: 70% 70% 60% 60%;
-  }
-
-  .left-cheek {
-    top: 15%;
-    left: 5%;
-    background: white;
-    width: 60%;
-    height: 70%;
-    border-radius: 70% 70% 60% 60%;
-  }
-
-  .belly {
-    top: 60%;
-    left: 2.5%;
-    background: white;
-    width: 95%;
-    height: 100%;
-    border-radius: 120% 120% 100% 100%;
-  }
-
   .right-feet {
     top: 85%;
     left: 60%;
-    background: orange;
+    background: var(--penguin-beak, orange);
     width: 15%;
     height: 30%;
     border-radius: 50% 50% 50% 50%;
@@ -122,7 +119,7 @@ penguin-bottom, right-hand and left-hand classes. -->
   .left-feet {
     top: 85%;
     left: 25%;
-    background: orange;
+    background: var(--penguin-beak, orange);
     width: 15%;
     height: 30%;
     border-radius: 50% 50% 50% 50%;
@@ -178,7 +175,7 @@ penguin-bottom, right-hand and left-hand classes. -->
   .beak-top {
     top: 60%;
     left: 40%;
-    background: orange;
+    background: var(--penguin-beak, orange);
     width: 20%;
     height: 10%;
     border-radius: 50%;
@@ -187,14 +184,10 @@ penguin-bottom, right-hand and left-hand classes. -->
   .beak-bottom {
     top: 65%;
     left: 42%;
-    background: orange;
+    background: var(--penguin-beak, orange);
     width: 16%;
     height: 10%;
     border-radius: 50%;
-  }
-
-  body {
-    background:#c6faf1;
   }
 
   .penguin * {
