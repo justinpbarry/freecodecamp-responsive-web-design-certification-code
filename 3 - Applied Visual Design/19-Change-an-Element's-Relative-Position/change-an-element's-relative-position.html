@@ -7,16 +7,25 @@
     You are free to use this code as you like. Please just give me credit.
 -->
 
+<!-- Change the position of the h2 to relative, and use a CSS offset to move it 15 pixels away
+from the top of where it sits in the normal flow. Notice there is no impact on the positions of the
+ surrounding h1 and p elements. -->
+
 <style>
-  a {
-      color: #000;
-  }
+  h2 {
 
-  a:hover {
-      color: blue;
-  }
+      position: relative;
+      /* the following moves it to the right 100px and to the bottom 35px; */
+      /* left: 100px;
+      top: 35px; */
+      top: 15px;
 
+  }
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
 
 </html>

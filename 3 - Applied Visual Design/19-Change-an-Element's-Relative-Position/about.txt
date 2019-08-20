@@ -2,40 +2,57 @@ info from challenge page
 #####################
 #####################
 #####################
-Applied Visual Design: Adjust the Hover State of an Anchor Tag
-This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be
-added to selectors, in order to select a specific state of the element.
+Applied Visual Design: Change an Element's Relative Position
+CSS treats each HTML element as its own box, which is usually referred to as the CSS Box Model.
+Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline
+ items sit within surrounding content (like images or spans). The default layout of elements in this way
+  is called the normal flow of a document, but CSS offers the position property to override it.
 
-For example, the styling of an anchor tag can be changed for its hover state using the :hover pseudo-class
- selector. Here's the CSS to change the color of the anchor tag to red during its hover state:
+When the position of an element is set to relative, it allows you to specify how CSS should move it relative
+ to its current position in the normal flow of the page. It pairs with the CSS offset properties of left or
+  right, and top or bottom. These say how many pixels, percentages, or ems to move the item away from where
+   it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:
 
-a:hover {
-  color: red;
+p {
+  position: relative;
+  bottom: 10px;
 }
+Changing an element's position to relative does not remove it from the normal flow - other elements around
+ it still behave as if that item were in its default position.
 
-The code editor has a CSS rule to style all a tags black. Add a rule so that when the user hovers over the
- a tag, the color is blue.
+Note
+Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember
+ that no matter the position of elements, the underlying HTML markup should be organized and make sense when
+  read from top to bottom. This is how users with visual impairments (who rely on assistive devices like
+   screen readers) access your content.
 
-The anchor tag color should remain black, only add CSS rules for the :hover state.
-The anchor tag should have a color of blue on hover.
 
+Change the position of the h2 to relative, and use a CSS offset to move it 15 pixels away from the top of
+ where it sits in the normal flow. Notice there is no impact on the positions of the surrounding
+  h1 and p elements.
+
+The h2 element should have a position property set to relative.
+Your code should use a CSS offset to relatively position the h2 15px away from the top of where it
+normally sits.
 #####################
 #####################
 #####################
 original location of challenge
 URL
-https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/adjust-the-hover-state-of-an-anchor-tag
+https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/change-an-elements-relative-position
 #####################
 #####################
 #####################
 below is the original code that comes along with this challenge
 CODE
 <style>
-  a {
-    color: #000;
+  h2 {
+
+
   }
-
-
-
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
