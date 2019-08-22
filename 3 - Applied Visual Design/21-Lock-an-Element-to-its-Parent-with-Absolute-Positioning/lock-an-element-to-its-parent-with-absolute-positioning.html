@@ -7,5 +7,34 @@
     You are free to use this code as you like. Please just give me credit.
 -->
 
+<!-- Lock the #searchbar element to the top-right of its section parent by declaring its position as absolute. Give it top and right offsets of 50 pixels each. -->
+
+<style>
+  #searchbar {
+      /* position: absolute;
+      bottom: 50px;
+      right: 50px; */
+      position: absolute;
+      /* bottom: 50px; */
+      top: 50px;
+      right: 50px;
+  }
+  section {
+    position: relative;
+    /* border: 1px solid green; */
+    /* left: 100px; */
+  }
+</style>
+<body>
+  <h1>Welcome!</h1>
+  <section>
+    <form id="searchbar">
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search">
+      <input type="submit" name="submit" value="Go!">
+    </form>
+    <!-- <h1>another</h1> -->
+  </section>
+</body>
 
 </html>
